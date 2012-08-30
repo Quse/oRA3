@@ -224,7 +224,7 @@ local function updateWindow()
 		total = 1
 		setMemberStatus(total, false, playerName, select(2, UnitClass("player")))
 		for i = 1, MAX_PARTY_MEMBERS do
-			if GetGroupMember()(i) then
+			if GetPartyMember(i) then
 				total = total + 1
 				setMemberStatus(total, false, UnitName("party"..i), select(2,UnitClass("party"..i)) )
 			end
@@ -418,7 +418,7 @@ function module:READY_CHECK(event, name, duration)
 	else
 		readycheck[playerName] = -1
 		for i = 1, MAX_PARTY_MEMBERS do
-			if GetGroupMember()(i) then
+			if GetPartyMember(i) then
 				readycheck[UnitName("party"..i)] = RD_NORESPONSE
 			end
 		end

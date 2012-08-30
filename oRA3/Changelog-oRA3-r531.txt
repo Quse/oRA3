@@ -1,0 +1,61 @@
+------------------------------------------------------------------------
+r531 | mysticalos | 2012-08-30 02:16:36 +0000 (Thu, 30 Aug 2012) | 1 line
+Changed paths:
+   M /trunk/modules/Invite.lua
+   M /trunk/modules/Loot.lua
+   M /trunk/modules/Promote.lua
+   M /trunk/modules/Zone.lua
+
+More Fixes
+------------------------------------------------------------------------
+r530 | stanzilla | 2012-08-30 01:51:14 +0000 (Thu, 30 Aug 2012) | 1 line
+Changed paths:
+   M /trunk/modules/Invite.lua
+   M /trunk/modules/Zone.lua
+   M /trunk/oRA3.lua
+
+more fixes
+------------------------------------------------------------------------
+r529 | stanzilla | 2012-08-30 01:30:15 +0000 (Thu, 30 Aug 2012) | 1 line
+Changed paths:
+   M /trunk/modules/Promote.lua
+
+more API usage fixes
+------------------------------------------------------------------------
+r528 | stanzilla | 2012-08-30 01:20:05 +0000 (Thu, 30 Aug 2012) | 1 line
+Changed paths:
+   M /trunk/oRA3.lua
+
+add IsInRaid() check
+------------------------------------------------------------------------
+r527 | stanzilla | 2012-08-30 01:14:50 +0000 (Thu, 30 Aug 2012) | 1 line
+Changed paths:
+   M /trunk/modules/Invite.lua
+   M /trunk/modules/Promote.lua
+
+more API updates
+------------------------------------------------------------------------
+r526 | stanzilla | 2012-08-30 01:06:39 +0000 (Thu, 30 Aug 2012) | 1 line
+Changed paths:
+   M /trunk/oRA3.lua
+
+some 5.0 API updates
+------------------------------------------------------------------------
+r525 | stanzilla | 2012-08-30 01:00:34 +0000 (Thu, 30 Aug 2012) | 1 line
+Changed paths:
+   M /trunk/oRA3.toc
+
+friendly toc bump from the neighbourhood
+------------------------------------------------------------------------
+r524 | stanzilla | 2012-08-30 00:58:53 +0000 (Thu, 30 Aug 2012) | 1 line
+Changed paths:
+   M /trunk/oRA3.lua
+
+UIPanelButtonTemplate2 => UIPanelButtonTemplate
+------------------------------------------------------------------------
+r523 | mysticalos | 2012-02-02 06:39:57 +0000 (Thu, 02 Feb 2012) | 1 line
+Changed paths:
+   M /trunk/oRA3.toc
+
+Bump Toc, some people in raid are complaining it's "out of date". sigh.
+------------------------------------------------------------------------

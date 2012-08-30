@@ -2,7 +2,7 @@ local addon = LibStub("AceAddon-3.0"):NewAddon("oRA3", "AceHook-3.0", "AceEvent-
 local CallbackHandler = LibStub("CallbackHandler-1.0")
 _G.oRA3 = addon
 
-addon.VERSION = tonumber(("$Revision: 516 $"):sub(12, -3))
+addon.VERSION = tonumber(("$Revision: 530 $"):sub(12, -3))
 
 local L = LibStub("AceLocale-3.0"):GetLocale("oRA3")
 
@@ -24,6 +24,7 @@ local _testUnits = {
 	Python = "PRIEST",
 	Purple = "HUNTER",
 	Tor = "SHAMAN",
+	Ling = "MONK",
 }
 addon._testUnits = _testUnits
 local coloredNames = setmetatable({}, {__index =
@@ -249,7 +250,6 @@ function addon:OnEnable()
 	-- Roster Status Events
 	self:RegisterEvent("GUILD_ROSTER_UPDATE")
 	self:RegisterEvent("GROUP_ROSTER_UPDATE")
-	self:RegisterEvent("GROUP_ROSTER_UPDATE")
 	self:RegisterEvent("CHAT_MSG_SYSTEM")
 	self:RegisterEvent("PLAYER_REGEN_DISABLED")
 	self:RegisterEvent("PLAYER_REGEN_ENABLED")
@@ -383,7 +383,7 @@ do
 
 	function addon:GROUP_ROSTER_UPDATE(event)
 		local oldStatus = groupStatus
-		if GetNumGroupMembers() > 0 then
+		if GetNumGroupMembers() > 0 and IsInRaid() then
 			groupStatus = INRAID
 		elseif GetNumSubgroupMembers() > 0 then
 			groupStatus = INPARTY
@@ -462,9 +462,9 @@ function addon:IsPromoted(name)
 
 	if not name then name = playerName end
 	if groupStatus == INRAID then
-		return UnitIsGroupLeader("unit")
+		return UnitIsGroupAssistant(name)
 	elseif groupStatus == INPARTY then
-		return UnitIsGroupAssistant("unit")
+		return UnitIsGroupLeader(name)
 	end
 end
 

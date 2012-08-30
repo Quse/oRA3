@@ -8,7 +8,7 @@ local module = oRA:NewModule("Promote", "AceEvent-3.0", "AceHook-3.0")
 local L = LibStub("AceLocale-3.0"):GetLocale("oRA3")
 local AceGUI = LibStub("AceGUI-3.0")
 
-module.VERSION = tonumber(("$Revision: 517 $"):sub(12, -3))
+module.VERSION = tonumber(("$Revision: 531 $"):sub(12, -3))
 
 --------------------------------------------------------------------------------
 -- Locals
@@ -26,7 +26,7 @@ local dontPromoteThisSession = {}
 local demoteButton = nil
 local function updateDemoteButton()
 	if not demoteButton then return end
-	if UnitIsGroupLeader("unit") then
+	if UnitIsGroupLeader("player") then
 		demoteButton:SetDisabled(false)
 	else
 		demoteButton:SetDisabled(true)
@@ -89,8 +89,8 @@ do
 	end
 
 	local function demoteRaid()
-		if not UnitIsGroupLeader("unit") then return end
-		for i = 1, GetNumRaidMembers() do
+		if not UnitIsGroupLeader() then return end
+		for i = 1, GetNumGroupMembers() do
 			local n, rank = GetRaidRosterInfo(i)
 			if n and rank == 1 then
 				DemoteAssistant(n)
@@ -262,8 +262,8 @@ do
 	end)
 	function queuePromotes()
 		if f:IsShown() then f:Hide() end
-		if not UnitIsGroupLeader("unit") then return end
-		for i = 1, GetNumRaidMembers() do
+		if not UnitIsGroupLeader("player") then return end
+		for i = 1, GetNumGroupMembers() do
 			local n, r = GetRaidRosterInfo(i)
 			if n and r == 0 and shouldPromote(n) then
 				promotes[n] = true
