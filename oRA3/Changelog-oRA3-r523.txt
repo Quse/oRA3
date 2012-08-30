@@ -1,0 +1,13 @@
+------------------------------------------------------------------------
+r523 | mysticalos | 2012-02-02 06:39:57 +0000 (Thu, 02 Feb 2012) | 1 line
+Changed paths:
+   M /trunk/oRA3.toc
+
+Bump Toc, some people in raid are complaining it's "out of date". sigh.
+------------------------------------------------------------------------
+r522 | rabbit | 2011-12-21 11:09:24 +0000 (Wed, 21 Dec 2011) | 1 line
+Changed paths:
+   M /trunk/modules/ReadyCheck.lua
+
+Really remove the realm suffixes from the display, too.
+------------------------------------------------------------------------
